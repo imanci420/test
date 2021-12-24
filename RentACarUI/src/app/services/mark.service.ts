@@ -25,7 +25,7 @@ export class MarkService {
     return this.http.get<Mark>(`${this.url}/${id}`);
   }
 
-  createCity(mark: Mark): Observable<Mark> {
+  createMark(mark: Mark): Observable<Mark> {
     return this.http.post<Mark>(`${this.url}/create`, mark, this.httpOptions);
   }
 

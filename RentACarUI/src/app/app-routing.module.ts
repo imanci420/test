@@ -4,12 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './components/admin-pages/admin/admin.component';
 import { CarAdministrationComponent } from './components/admin-pages/car-administration/car-administration.component';
+import { CarCreationComponent } from './components/admin-pages/car-administration/car-creation/car-creation.component';
+import { CarEditingComponent } from './components/admin-pages/car-administration/car-editing/car-editing.component';
 import { CityCreationComponent } from './components/admin-pages/city-administration/city-creation/city-creation.component';
 import { CityEditingComponent } from './components/admin-pages/city-administration/city-editing/city-editing.component';
 import { CityAdministrationComponent } from './components/admin-pages/city-administration/city-main-page/city-administration.component';
 import { MarkCreationComponent } from './components/admin-pages/mark-administration/mark-creation/mark-creation.component';
 import { MarkEditingComponent } from './components/admin-pages/mark-administration/mark-editing/mark-editing.component';
 import { MarkAdministrationComponent } from './components/admin-pages/mark-administration/mark-main-page/mark-administration.component';
+import { CarInfoComponent } from './components/car-info/car-info.component';
 import { LoginComponent } from './components/login/login.component';
 import { SearchComponent } from './components/menu/search/search.component';
 import { RegisterCustomerComponent } from './components/register-customer/register-customer.component';
@@ -22,8 +25,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   
   { path: 'search', component: SearchComponent, canActivate: [UserAuthGuard]},
-
-  { path: 'admin/car', component: CarAdministrationComponent, canActivate: [AuthGuard]},
   
   { path: 'admin/city', component: CityAdministrationComponent, canActivate: [AuthGuard]},
   { path: 'admin/city/create', component: CityCreationComponent, canActivate: [AuthGuard]},
@@ -32,6 +33,13 @@ const routes: Routes = [
   { path: 'admin/mark', component: MarkAdministrationComponent, canActivate: [AuthGuard]},
   { path: 'admin/mark/create', component: MarkCreationComponent, canActivate: [AuthGuard]},
   { path: 'admin/mark/details/:id', component: MarkEditingComponent, canActivate: [AuthGuard]},
+
+  { path: 'admin/car', component: CarAdministrationComponent, canActivate: [AuthGuard]},
+  { path: 'admin/car/create', component: CarCreationComponent, canActivate: [AuthGuard]},
+  { path: 'admin/car/details/:id', component: CarEditingComponent, canActivate: [AuthGuard]},
+
+  { path: 'car/:id', component: CarInfoComponent },
+
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
 ];
 

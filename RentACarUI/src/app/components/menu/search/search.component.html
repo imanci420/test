@@ -45,18 +45,29 @@
   
   </div>
 
-<h2 *ngIf="cars">Games</h2>
-<div class="car container">
+<h2 *ngIf="cars" class="mt-5">Cars</h2>
+<div *ngIf="cars" class="container">
   <div class="row">
-    <a *ngFor="let car of cars"
-       routerLink="/car/{{car.id}}"
-       class="col-sm-12 col-md-3">
-      <div class="game-block">
-        <h1 calss="model">{{car.model}}</h1>
-        <h2 class="color">{{car.color}}</h2>
-        <h3 class="price">{{car.pricePerHour | currency}}</h3>
-      </div>
-    </a>
+    <div class="col-4">
+      Model:
+    </div>
+    <div class="col-4">
+      Color:
+    </div>
+    <div class="col-4">
+      Price per hour ($):
+    </div>
+  </div>
+  <div *ngFor="let car of cars" class="row">
+    <div class="col-4">
+      <a class="font-size-24px" routerLink="/car/{{car.id}}">{{ car.model }}</a>
+    </div>
+    <div class="col-4 font-size-24px">
+      {{ car.color }}
+    </div>
+    <div class="col-4 font-size-24px">
+      {{ car.pricePerHour }}
+    </div>
   </div>
 </div>
   

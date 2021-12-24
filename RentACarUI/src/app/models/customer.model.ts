@@ -7,5 +7,5 @@ export class Customer {
     phoneNuber: string;
     passportNumber: string;
     debitCard: string;
-    roleId: number = 1;
+    roleId: number = 2;
 }

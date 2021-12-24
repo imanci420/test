@@ -8,4 +8,6 @@ export class Car {
     registrationNumber: string;
     status: boolean;
     transmission: string;
+    cityId: number;
+    markId: number;
 }

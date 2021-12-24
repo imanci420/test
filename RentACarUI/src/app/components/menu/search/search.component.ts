@@ -19,10 +19,12 @@ export class SearchComponent implements OnInit {
 
   }
 
-  search(){
+  search() {
     this.searchService.search(this.searchDto)
-    .subscribe(games => this.cars = games);
-  this.searchDto = new SearchDto();
+      .subscribe(cars => {
+        this.cars = cars
+        this.searchDto = new SearchDto();
+      });
   }
 
 }

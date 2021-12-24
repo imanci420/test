@@ -17,6 +17,9 @@ import { CityAdministrationComponent } from './components/admin-pages/city-admin
 import { MarkAdministrationComponent } from './components/admin-pages/mark-administration/mark-main-page/mark-administration.component';
 import { MarkEditingComponent } from './components/admin-pages/mark-administration/mark-editing/mark-editing.component';
 import { MarkCreationComponent } from './components/admin-pages/mark-administration/mark-creation/mark-creation.component';
+import { CarCreationComponent } from './components/admin-pages/car-administration/car-creation/car-creation.component';
+import { CarEditingComponent } from './components/admin-pages/car-administration/car-editing/car-editing.component';
+import { CarInfoComponent } from './components/car-info/car-info.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { MarkCreationComponent } from './components/admin-pages/mark-administrat
     CityCreationComponent,
     CityEditingComponent,
     MarkEditingComponent,
-    MarkCreationComponent
+    MarkCreationComponent,
+    CarCreationComponent,
+    CarEditingComponent,
+    CarInfoComponent
   ],
   imports: [
     HttpClientModule,

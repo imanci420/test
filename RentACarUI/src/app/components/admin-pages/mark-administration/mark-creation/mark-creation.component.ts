@@ -18,7 +18,7 @@ export class MarkCreationComponent implements OnInit {
   }
 
   createMark() {
-    this.markService.createCity(this.markForm)
+    this.markService.createMark(this.markForm)
       .subscribe();
     this.router.navigateByUrl('/admin/mark');
   }

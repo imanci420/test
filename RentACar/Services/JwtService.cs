@@ -20,7 +20,8 @@ namespace RentACar.Services
 
         public async Task<string> GenerateJWT(User user)
         {
-            var securityKey = await Task.Run(() => new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"])));
+            var key = config["Jwt:Key"];
+            var securityKey = await Task.Run(() => new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)));
             var credentials = await Task.Run(() => new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256));
 
             var claims = new[]
