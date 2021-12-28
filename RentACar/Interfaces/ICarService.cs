@@ -14,5 +14,7 @@ namespace RentACar.Interfaces
         Task DeleteCar(int Id);
         Task<List<Car>> GetAllCars();
         Task<Car> GetCarById(int Id);
+
+        Task ChangeCarStatus(int carId, bool newStatus);
     }
 }

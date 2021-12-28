@@ -20,6 +20,7 @@ import { MarkCreationComponent } from './components/admin-pages/mark-administrat
 import { CarCreationComponent } from './components/admin-pages/car-administration/car-creation/car-creation.component';
 import { CarEditingComponent } from './components/admin-pages/car-administration/car-editing/car-editing.component';
 import { CarInfoComponent } from './components/car-info/car-info.component';
+import { DatePickerComponent } from './components/shared/date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CarInfoComponent } from './components/car-info/car-info.component';
     MarkCreationComponent,
     CarCreationComponent,
     CarEditingComponent,
-    CarInfoComponent
+    CarInfoComponent,
+    DatePickerComponent
   ],
   imports: [
     HttpClientModule,

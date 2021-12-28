@@ -35,5 +35,7 @@ namespace RentACar.Controllers
         [HttpPut("update")]
         public async Task UpdateCar([FromBody] Car car) => await carService.UpdateCar(car);
 
+        [HttpPut("status/{carId}")]
+        public async Task ChangeCarStatus([FromRoute] int carId, [FromBody] bool newStatus) => await carService.ChangeCarStatus(carId, newStatus);
     }
 }

@@ -38,4 +38,8 @@ export class CarService {
       updateCar(car: Car): Observable<any> {
         return this._httpClient.put<any>(`${this._baseUrl}/update`, car);
       }
+
+      changeCarStatus(carId: number, newStatus: boolean): Observable<any> {
+          return this._httpClient.put<void>(`${this._baseUrl}/status/${carId}`, newStatus);
+      }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginDto } from 'src/app/models/login-dto.model';
+import { DecodedTokenService } from 'src/app/services/decoded-token.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   loginDto = new LoginDto();
   constructor(private loginService: LoginService,
-    private router: Router) { }
+    private router: Router,
+    private readonly _decodedTokenService: DecodedTokenService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +25,8 @@ export class LoginComponent implements OnInit {
       res => {
         localStorage.setItem('token', res.token);
         let decodedJWT = JSON.parse(window.atob(res.token.split('.')[1]));
+
+        this._decodedTokenService.decodedToken = decodedJWT;
 
         if (decodedJWT.role == "admin") {
           this.router.navigateByUrl('admin');

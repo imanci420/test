@@ -35,5 +35,12 @@ namespace RentACar.Services
             await context.SaveChangesAsync();
         }
         public async Task<List<Car>> GetAllCars() => await context.Cars.ToListAsync();
+
+        public async Task ChangeCarStatus(int carId, bool newStatus)
+        {
+            var car = await context.Cars.SingleOrDefaultAsync(c => c.Id == carId);
+            car.Status = newStatus;
+            await context.SaveChangesAsync();
+        }
     }
 }
